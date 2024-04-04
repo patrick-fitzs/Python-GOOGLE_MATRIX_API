@@ -3,7 +3,7 @@ import requests
 import smtplib
 
 # Stored google API key in txt file and open in read
-api_file = open("GOOGLEAPI.txt", "r")
+api_file = open("***GOOGLE_API***", "r")
 api_key = api_file.read()
 api_file.close()
 
@@ -40,7 +40,7 @@ if seconds > 3600:
     email = "Subject: {}\n\n{}".format(subject, message)
 
     # Get my email
-    password_file = open("gmail-pf959ftw-password.txt", "r")
+    password_file = open("***FILE_NAME***", "r")
     password = password_file.readline()
     password_file.close()
 
