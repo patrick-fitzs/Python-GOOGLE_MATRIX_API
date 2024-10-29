@@ -3,7 +3,7 @@ import requests
 import smtplib
 
 # Stored google API key in txt file and open in read
-api_file = open("***GOOGLE_API***", "r")
+api_file = open("GOOGLEAPI.txt", "r")
 api_key = api_file.read()
 api_file.close()
 
@@ -22,7 +22,7 @@ r = requests.get(url + "origins=" + home + "&destinations=" + destination + "&ke
 time = r.json()["rows"][0]["elements"][0]["duration"]["text"]
 seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
 
-print("\nThe total travel time from home to destination is", time, round(seconds/60,2), "m.s")
+print("\nThe total travel time from home to destination is", time, (seconds/60), "m.s")
 
 # Check if the total travel time is more than 1 hour/60x60= 3600
 """
@@ -34,13 +34,13 @@ if seconds > 3600:
     sender = "test@gmail.com"
     recipient = "test@gmail.com"
     subject = "News for you"
-    message = "Hey, \n\nIts going to take me over 60 minutes to get there!!!."
+    message = "Hey there, 'x' time remaining."
 
     # format for the email
     email = "Subject: {}\n\n{}".format(subject, message)
 
     # Get my email
-    password_file = open("***FILE_NAME***", "r")
+    password_file = open("gmail-pf959ftw-password.txt", "r")
     password = password_file.readline()
     password_file.close()
 

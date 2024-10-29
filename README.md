@@ -1,1 +1,0 @@
-A python program which uses Google's matrix API. The program takes in user inputs(home,destination) and calculates time to get there. IF travel time is over 60 minutes it will send an email to a sender of their choice to notify them of this.
